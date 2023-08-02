@@ -18,6 +18,9 @@ jobs:
           name: "Login docker"
           command: "docker login --username=$DOCKER_USER --password=$DOCKER_PASSWORD"
       - run:
+          name: "Setup buildx"
+          command: "docker buildx create --use"
+      - run:
           name: "make image"
           command: "make push-disk"
 
