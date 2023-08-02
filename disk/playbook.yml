@@ -64,9 +64,10 @@
         enabled: true
 
     - name: Add Google official GPG key
-      get_url:
-        url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
-        dest: /usr/share/keyrings/kubernetes-archive-keyring.gpg
+      shell: curl -fsSL https://dl.k8s.io/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+      # get_url:
+      #   url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+      #   dest: /usr/share/keyrings/kubernetes-archive-keyring.gpg
 
     - name: Add Kubernetes Repository
       apt_repository:
