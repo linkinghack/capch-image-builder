@@ -19,7 +19,7 @@ jobs:
           command: "docker login --username=$DOCKER_USER --password=$DOCKER_PASSWORD"
       - run:
           name: "make image"
-          command: "make push disk"
+          command: "make push-disk"
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
