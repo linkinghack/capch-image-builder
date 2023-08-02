@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "Login docker"
-          command: "docker login --username=$(DOCKER_USER) --password=$(DOCKER_PASSWORD)"
+          command: "docker login --username=$DOCKER_USER --password=$DOCKER_PASSWORD"
       - run:
           name: "make image"
           command: "make push disk"
